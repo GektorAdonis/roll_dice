@@ -1,24 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:roll_dice/styled_text.dart';
+import 'package:roll_dice/dice_roller.dart';
+
+const startAlignment = Alignment.topLeft;
+const endAlignment = Alignment.bottomRight;
 
 class GradientContainer extends StatelessWidget {
-  const GradientContainer({super.key});
+  const GradientContainer(this.colors, {super.key});
+
+  final List<Color> colors;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [
-            Color.fromARGB(255, 79, 18, 185),
-            Color.fromARGB(255, 25, 2, 68),
-          ],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
+          colors: colors,
+          begin: startAlignment,
+          end: endAlignment,
         ),
       ),
       child: const Center(
-        child: StyledText(),
+        child: DiceRoller(),
       ),
     );
   }

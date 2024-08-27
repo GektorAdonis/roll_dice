@@ -4,10 +4,15 @@ import 'gradient_container.dart';
 
 void main() {
   runApp(
-    const MaterialApp(
+    MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: GradientContainer(),
+        body: GradientContainer(
+          [
+            Color.fromARGB(255, 79, 18, 185),
+            Color.fromARGB(255, 25, 2, 68),
+          ],
+        ),
       ),
     ),
   );
